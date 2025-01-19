@@ -1,0 +1,207 @@
+/*############ General styles (both mobile and desktop) ############*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+header {
+    background-color: rgb(80, 156, 172);
+}
+
+main{
+    background-color: rgb(26, 115, 138);
+    margin-top: 0;
+}
+
+section {
+    margin: 20px auto;
+    border: solid 2px rgb(223, 218, 231);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+
+
+.section-title{
+    position: relative;
+    left: 5px;
+    top: -20px;
+    z-index: 1;
+    display: inline;
+    padding: 0 3px;
+    color: white;
+    background-color: rgb(26, 115, 138);
+}
+
+#summary{
+    color: white;
+    font-size: 20px;
+}
+
+.contact-title {
+    color: white;
+    margin-top: 0.25cm;
+    margin-left: 0.1cm;
+}
+
+.section-item{
+    margin: 0.1cm 0.1cm;
+    background-color: rgb(197, 227, 233);
+    border-radius: 0.2cm;
+    display:inline-block;
+    padding: 0.1cm 0.1cm;
+    box-sizing: border-box;
+}
+.section-item a{
+    color: black;
+}
+
+#space2{
+    height: 5px;
+}
+
+
+/*########################## Mobile styles ##########################*/
+
+@media only screen and (max-width: 600px) {
+    #container {
+        margin: 0 10px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    header {
+        width: 80%;
+        float: left;
+        height: 70px;
+    }
+    #name{
+        font-size: 30px;
+        padding: 3px 5px;
+    }
+    #title{
+        font-size: 20px;
+        padding: 0 5px;
+    }
+
+    #menu {
+        background-color: rgb(80, 156, 172);
+        width: 20%;
+        float: right;
+        height: 70px;
+        direction: rtl;
+        box-sizing: border-box;
+        padding: 25px 10px;
+    }
+    section {
+        width: 90%;
+    }
+
+    #space1{
+        height: 75px;
+    }
+
+}
+
+
+/*########################## Desktop styles ##########################*/
+
+
+@media only screen and (min-width: 600px) {
+    #container {
+        margin: 0 100px;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    nav {
+        width: 100%;
+        min-height: 50px;
+        background-color: rgb(26, 115, 138);
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    nav ul li:hover{
+        background-color: rgb(197, 227, 233);
+    }
+
+    nav ul li a:hover{
+        color: black;
+    }
+
+    li a {
+        display: block;
+        padding: 15px 20px;
+        color: aliceblue;
+        font-size: large;
+    }
+
+    header {
+        width: 100%;
+        height: 120px;
+    }
+    #name{
+        font-size: 60px;
+        padding: 5px 10px;
+    }
+    #title{
+        font-size: 30px;
+        padding: 0 10px;
+    }
+
+    #summary{
+        width: 95%;
+        margin: 0px auto 40px;
+        position: relative;
+        top: 20px;
+    }
+    
+    #skills  {
+        box-sizing: border-box;
+        width: 47.25%;
+        min-height:375px;
+        margin: 20px 1.25% 20px 1.5%;
+        float: left;
+    }
+
+    #contact {
+        box-sizing: border-box;
+        width: 47.25%;
+        min-height: 375px;
+        margin: 20px 1.5% 20px 1.25%;
+        float: left;
+    }
+    
+    #portfolio{
+        width: 95%;
+        margin: 20px auto;
+        clear: both;
+    }
+
+    
+
+
+}
