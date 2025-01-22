@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.layout-container{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#summary,
+.gradient {
+  background-image: linear-gradient(to right, rgb(255, 94, 0), #e71bee);
+  color: white;
+}
+div:has(> hr) {
+  width: 97%;
+  margin: 0 auto;
+  height: 1px;
+  background-color: white;
+}
+
+#payment > div > div > div {
+  height: 150px;
+  width: 96%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#payment > div > div > div:hover {
+  border: 4px solid rgb(238, 14, 126);
+  cursor: pointer;
+}
+
+img {
+  height: 80px;
+}
+
+input {
+  display: inline;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(243, 243, 243);
+  border: 2px solid rgb(182, 180, 180);
+  border-radius: 5px;
+}
+
+.q-icon {
+  position: relative;
+  left: -65px;
+  top: 10px;
+  overflow: hidden;
+}
+
+input[type="button"] {
+  width: 40%;
+  height: 100px;
+  margin: 50px 30%;
+  border: none;
+  border-radius: 50px;
+}
+
+#help {
+  background-image: linear-gradient(to left, rgb(255, 94, 0), #e71bee);
+  color: transparent;
+  background-clip: text;
+}
+#help span:hover{
+  cursor: pointer;
+}
