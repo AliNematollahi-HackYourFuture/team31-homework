@@ -10,24 +10,24 @@ body {
     box-sizing: border-box;
 }
 
-a {
+.text-decoration-none {
     text-decoration: none;
 }
 
-li {
+.list-style-type-none {
     list-style-type: none;
 }
 
-header {
+.header-style{
     background-color: rgb(80, 156, 172);
 }
 
-main{
+.main-style{
     background-color: rgb(26, 115, 138);
     margin-top: 0;
 }
 
-section {
+.section-style {
     margin: 20px auto;
     border: solid 2px rgb(223, 218, 231);
     border-radius: 10px;
@@ -40,38 +40,46 @@ section {
 .section-title{
     position: relative;
     left: 5px;
-    top: -20px;
+    top: -22px;
     z-index: 1;
+    font-size: 20px;
+    font-weight: bold;
     display: inline;
     padding: 0 3px;
     color: white;
     background-color: rgb(26, 115, 138);
 }
 
-#summary{
+.summary-style{
     color: white;
     font-size: 20px;
 }
 
 .contact-title {
     color: white;
-    margin-top: 0.25cm;
-    margin-left: 0.1cm;
+    margin-top: 7px;
+    margin-left: 3px;
+}
+
+section.skills-style > div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 .section-item{
-    margin: 0.1cm 0.1cm;
+    margin: 4px 4px;
     background-color: rgb(197, 227, 233);
-    border-radius: 0.2cm;
+    border-radius: 6px;
     display:inline-block;
-    padding: 0.1cm 0.1cm;
+    padding: 3px 3px;
     box-sizing: border-box;
 }
 .section-item a{
     color: black;
 }
 
-#space2{
+.space2{
     height: 5px;
 }
 
@@ -79,29 +87,29 @@ section {
 /*########################## Mobile styles ##########################*/
 
 @media only screen and (max-width: 600px) {
-    #container {
+    .main-container {
         margin: 0 10px;
     }
 
-    nav {
+    .navbar {
         display: none;
     }
 
-    header {
+    .header-style {
         width: 80%;
         float: left;
         height: 70px;
     }
-    #name{
+    .header__title{
         font-size: 30px;
         padding: 3px 5px;
     }
-    #title{
+    .header__description{
         font-size: 20px;
         padding: 0 5px;
     }
 
-    #menu {
+    .menu {
         background-color: rgb(80, 156, 172);
         width: 20%;
         float: right;
@@ -110,11 +118,11 @@ section {
         box-sizing: border-box;
         padding: 25px 10px;
     }
-    section {
+    .section-style {
         width: 90%;
     }
 
-    #space1{
+    .space1{
         height: 75px;
     }
 
@@ -125,61 +133,61 @@ section {
 
 
 @media only screen and (min-width: 600px) {
-    #container {
+    .main-container {
         margin: 0 100px;
     }
 
-    #menu {
+    .menu {
         display: none;
     }
 
-    nav {
+    .navbar {
         width: 100%;
         min-height: 50px;
         background-color: rgb(26, 115, 138);
     }
 
-    nav ul {
+    .navbar ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    nav ul li:hover{
+    li.nav-item:hover{
         background-color: rgb(197, 227, 233);
     }
 
-    nav ul li a:hover{
-        color: black;
-    }
-
-    li a {
+    .nav-item-link {
         display: block;
         padding: 15px 20px;
         color: aliceblue;
         font-size: large;
     }
 
-    header {
+    a.nav-item-link:hover{
+        color: black;
+    }
+
+    .header-style {
         width: 100%;
-        height: 120px;
+        height: 150px;
     }
-    #name{
+    .header__title{
         font-size: 60px;
-        padding: 5px 10px;
+        padding: 10px;
     }
-    #title{
+    .header__description{
         font-size: 30px;
         padding: 0 10px;
     }
 
-    #summary{
+    .summary-style{
         width: 95%;
         margin: 0px auto 40px;
         position: relative;
         top: 20px;
     }
     
-    #skills  {
+    .skills-style{
         box-sizing: border-box;
         width: 47.25%;
         min-height:375px;
@@ -187,7 +195,7 @@ section {
         float: left;
     }
 
-    #contact {
+    .contact-style {
         box-sizing: border-box;
         width: 47.25%;
         min-height: 375px;
@@ -195,13 +203,10 @@ section {
         float: left;
     }
     
-    #portfolio{
+    .portfolio-style{
         width: 95%;
         margin: 20px auto;
         clear: both;
     }
-
-    
-
 
 }
