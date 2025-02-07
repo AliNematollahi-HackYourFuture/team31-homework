@@ -1,12 +1,12 @@
 console.log('====== Age-ify ======');
 
 
-let yearOfBirth = 1989;
-let yearFuture = 2050;
+const yearOfBirth = 1989;
+const yearFuture = 2050;
 
-let age = yearFuture - yearOfBirth;
+const age = yearFuture - yearOfBirth;
 
-console.log('You will be' , age , 'years old in' , yearFuture);
+console.log("You will be " + age + "' years old in " + yearFuture);
 
 // Better solution
-console.log(`You will be ${age} years old in ${yearFuture}`);
+console.log(`You will be ${age}' years old in ${yearFuture}`);

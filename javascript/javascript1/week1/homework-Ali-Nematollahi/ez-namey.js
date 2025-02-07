@@ -1,6 +1,6 @@
 console.log("====== Ez Namey ======");
 
-let firstWords = [
+const firstWords = [
   "Bold",
   "Dynamic",
   "Innovative",
@@ -12,7 +12,7 @@ let firstWords = [
   "Creative",
   "Smart",
 ];
-let secondWords = [
+const secondWords = [
   "Fresh",
   "Limitless",
   "Next-gen",
@@ -24,7 +24,8 @@ let secondWords = [
   "Inspiring",
 ];
 
-const randomNumber = Math.floor(Math.random() * 10);
-let startupName = firstWords[randomNumber] + ' ' + secondWords[randomNumber];
+const firstRandomNumber = Math.floor(Math.random() * 10);
+const secondRandomNumber = Math.floor(Math.random() * 10);
+const startupName = firstWords[firstRandomNumber] + ' ' + secondWords[secondRandomNumber];
 
 console.log(`The startup: "${startupName}" contains ${startupName.length} characters`);

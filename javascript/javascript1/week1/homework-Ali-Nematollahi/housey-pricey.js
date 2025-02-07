@@ -1,15 +1,15 @@
 console.log('====== housey-pricey ======');
 
 
-function comparePrice(name, width, Depth , height , gardenSizeInM2 , suggestedPrice){
+function comparePrice(friendName, houseWidth, houseDepth , houseHeight , gardenSizeInM2 , suggestedPrice){
 
-    let volumeInMeters = width * height * Depth;
-    let housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
+    const volumeInMeters = houseWidth * houseHeight * houseDepth;
+    const housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 
     if(suggestedPrice > housePrice){
-        console.log(`For ${name}'s house, suggested price is ${suggestedPrice},but estimated price is ${housePrice}, so ${name} is paying too much.`);
+        console.log(`For ${friendName}'s house, suggested price is ${suggestedPrice},but estimated price is ${housePrice}, so ${friendName} is paying too much.`);
     } else {
-        console.log(`For ${name}'s house, suggested price is ${suggestedPrice},but estimated price is ${housePrice}, so ${name} is paying too little.`);
+        console.log(`For ${friendName}'s house, suggested price is ${suggestedPrice},but estimated price is ${housePrice}, so ${friendName} is paying too little.`);
     }
 }
 
