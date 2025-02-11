@@ -8,17 +8,16 @@
   </head>
   <body>
     <div class="layout-container">
-
       <!-- Order Summary Part -->
 
       <section class="gradient">
-        <h2 class="order-summary">Order Summary</h2>
+        <h1 class="order-summary">Order Summary</h1>
         <p class="order-summary-part1">
-          <span class="">Total</span>
+          Total
           <span class="left-view">$333 / month</span>
         </p>
         <p class="order-summary-part2">
-          <span class="">Total</span>
+          Total
           <span class="left-view">$100</span>
         </p>
       </section>
@@ -28,22 +27,20 @@
       <section class="payment container-fluid">
         <h2 class="section-title">Payment Method</h2>
         <div class="payment-container">
-          <div class="payment-option">
-            <img class="img-style color" src="img/master.png" alt="Master Card" />
-            <img class="img-style color" src="img/visa.png" alt="Visa" />
-            <img class="img-style color" src="img/american.png" alt="American Express" />
-
-            <img class="img-style black-white" src="img/master1.png" alt="Master Card" />
-            <img class="img-style black-white" src="img/visa1.png" alt="Visa" />
-            <img class="img-style black-white" src="img/american1.png" alt="American Express" />
+          <button class="payment-option" type="button">
+            <img class="img-style" src="img/master.png" alt="Master Card" />
+            <img class="img-style" src="img/visa.png" alt="Visa" />
+            <img
+              class="img-style"
+              src="img/american.png"
+              alt="American Express"
+            />
             <p>Credit / Debit</p>
-          </div>
-          <div class="payment-option">
-            <img class="img-style color" src="img/paypal.png" alt="PayPal" />
-
-            <img class="img-style black-white" src="img/paypal1.png" alt="PayPal" />
+          </button>
+          <button class="payment-option" type="button">
+            <img class="img-style" src="img/paypal.png" alt="PayPal" />
             <p>PayPal</p>
-          </div>
+          </button>
         </div>
       </section>
 
@@ -53,9 +50,13 @@
         <h2 class="section-title">Card Info</h2>
         <div class="card-info-container">
           <div>
-            <p>Card Number</p>
+            <label for="card-number">Card Number</label>
             <div class="input-container">
-              <input type="text" placeholder="1234 1234 1234 1234" />
+              <input
+                id="card-number"
+                type="text"
+                placeholder="1234 1234 1234 1234"
+              />
               <button class="icon-btn">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,15 +74,20 @@
             </div>
           </div>
           <div>
-            <p>Expiry Date</p>
+            <label for="expiry-date">Expiry Date</label>
             <div class="input-container">
-              <input type="text" placeholder="MM/YY" />
+              <input id="expiry-date" type="text" placeholder="MM/YY" />
             </div>
           </div>
           <div>
-            <p>Security Code</p>
+            <label for="security-code">Security Code</label>
             <div class="input-container">
-              <input class="fix-icon" type="text" placeholder="CVV" />
+              <input
+                id="security-code"
+                class="fix-icon"
+                type="text"
+                placeholder="CVV"
+              />
               <button class="icon-btn">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -99,19 +105,16 @@
             </div>
           </div>
         </div>
-
       </section>
 
       <!-- Bye Now Button -->
 
       <section>
-        <input
-          class="button-style input-style gradient"
-          type="button"
-          value="Bye Now"
-        />
+        <button class="button-style input-style gradient" type="button">
+          Bye Now
+        </button>
         <div class="help">
-          <a href="#">Need Help?</a>
+          <a class="help__link" href="#">Need Help?</a>
         </div>
       </section>
     </div>
