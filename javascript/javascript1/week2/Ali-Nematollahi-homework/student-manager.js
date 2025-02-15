@@ -6,19 +6,11 @@ function addStudentToClass(studentName) {
 
   if(class07Students.length < 6 || studentName === "Queen"){
 
-    if (studentName == ""){
+    if (!studentName){
         console.log("student name is required");
     } else {
 
-        let isNameAlreadyExist = false;
-
-        for(let i=0; i<class07Students.length; i++){
-            if(studentName === class07Students[i]){
-                isNameAlreadyExist = true;
-            }
-        }
-
-        if(isNameAlreadyExist){
+        if(class07Students.includes(studentName)){
             console.log(`Student ${studentName} is already in the class`)
         } else {
             class07Students.push(studentName);

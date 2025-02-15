@@ -1,16 +1,17 @@
 console.log("====== Flight booking fullname function ======");
 
 function getFullname(firstname , surname , useFormalName , gender){
+    const fullName = firstname + ' ' + surname;
     if(useFormalName){
-        if(gender === "male"){
-            return 'Lord ' + firstname + ' ' + surname;
+        if(gender.toLowerCase() === "male"){
+            return 'Lord ' + fullName;
         } else if(gender === "female"){
-            return 'Lady ' + firstname + ' ' + surname;
+            return 'Lady ' + fullName;
         } else {
-            return firstname + ' ' + surname;
+            return fullName;
         }
     } else {
-        return firstname + ' ' + surname;
+        return fullName;
     }
 }
 
