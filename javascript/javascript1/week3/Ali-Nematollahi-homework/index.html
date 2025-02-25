@@ -15,19 +15,21 @@
       <div>
         <form id="form-limit" class="input-form">
           <div class="input-container">
-            <label class="label-block" for="limit">Set Your Limit</label>
-            <input class="inputs" type="number" id="limit" required />
+            <label class="label-block" for="input-limit">Set Your Limit</label>
+            <input class="inputs" type="number" id="input-limit" required onchange="limitErrorHandler()" />
           </div>
           <button class="button" type="submit" onclick="setLimit(event)">
             Set Limit
           </button>
+          <p id="display-error-limit" class="color-red"> Invalid Input</p>
         </form>
         <hr />
         <h3>Enter Your Usage Phone Activity</h3>
         <form id="form-activity" class="input-form">
           <div class="input-container">
             <label class="label-block" for="input-date">Date</label>
-            <input class="inputs" type="date" id="input-date" required />
+            <input class="inputs" type="date" id="input-date" required onfocus="dateErrorHandler()"/>
+            <p id="display-error-date" class="color-red"> Invalid Input</p>
           </div>
           <div class="input-container">
             <label class="label-block" for="input-activity">Activity</label>
@@ -37,6 +39,7 @@
               list="activity-options"
               id="input-activity"
               required
+              onfocus="activityErrorHandler()"
             />
             <datalist id="activity-options">
               <option>Youtube</option>
@@ -45,14 +48,17 @@
               <option>Instagram</option>
               <option>Tiktok</option>
             </datalist>
+          <p id="display-error-activity" class="color-red"> Invalid Input</p>
           </div>
           <div class="input-container">
             <label class="label-block" for="input-duration">Duration</label>
-            <input class="inputs" type="number" id="input-duration" required />
+            <input class="inputs" type="number" id="input-duration" required onchange="durationErrorHandler()"/>
+            <p id="display-error-duration" class="color-red"> Invalid Input</p>
           </div>
-          <button class="button" type="submit" onclick="addActivity(event)">
+          <button class="button" type="submit" onclick="activityHandler(event)">
             Add Activity
           </button>
+          <p id="display-over-limit-error"></p>
         </form>
         <hr />
         <div>

@@ -5,8 +5,12 @@ const notes = [];
 // ########################## saveNote ##########################
 
 function saveNote(content, id) {
-  const time = new Date();  // adding unique feature (adding current time for each note)
-  notes.push({ content: content, id: id , time: time.toLocaleTimeString()});
+  if (!content || !id || isNaN(id)) {
+    console.log("invalid input");
+  } else {
+    const time = new Date(); // adding unique feature (adding current time for each note)
+    notes.push({ content: content, id: id, time: time.toLocaleTimeString() });
+  }
 }
 
 saveNote("Pick up groceries", 1);

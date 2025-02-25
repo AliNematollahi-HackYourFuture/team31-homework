@@ -21,36 +21,75 @@ const showLimitElement = document.getElementById("limit-value");
 const displayLimit = document.getElementById("display-limit");
 displayLimit.style.display = "none";
 const displayOverLimit = document.getElementById("display-over-limit");
+const displayOverLimitError = document.getElementById(
+  "display-over-limit-error"
+);
+displayOverLimitError.style.display = "none";
 const displayNotSetLimit = document.getElementById("display-not-set-limit");
+const displayErrorLimit = document.getElementById("display-error-limit");
+displayErrorLimit.style.display = "none";
+const displayErrorDate = document.getElementById("display-error-date");
+displayErrorDate.style.display = "none";
+const displayErrorActivity = document.getElementById("display-error-activity");
+displayErrorActivity.style.display = "none";
+const displayErrorDuration = document.getElementById("display-error-duration");
+displayErrorDuration.style.display = "none";
+inputLimit = document.getElementById("input-limit");
+inputDate = document.getElementById("input-date");
+inputActivity = document.getElementById("input-activity");
+inputDuration = document.getElementById("input-duration");
 
-function addActivity(event) {
+function activityHandler(event) {
   event.preventDefault();
   tables.style.display = "block";
 
-  let date = document.getElementById("input-date").value;
-  let activity = document.getElementById("input-activity").value;
-  let duration = Number(document.getElementById("input-duration").value);
+  let date = inputDate.value;
+  let activity = inputActivity.value;
+  let duration = Number(inputDuration.value);
 
-  if (date !== "" && activity !== "" && duration > 0) {
-    activities.push({
-      date: date,
-      activity: activity,
-      duration: duration,
-    });
+  if (overLimitDates.includes(date)) {
+    displayOverLimitError.innerHTML = `You Can Not Add More Activity On date: ${date}, Because You Have Reached Your Daily Limit`;
+    displayOverLimitError.style.display = "block";
+    displayOverLimitError.style.color = "red";
+  } else {
+    if (!date || !activity || duration <= 0) {
+      if (!date) {
+        displayErrorDate.style.display = "block";
+        inputDate.style.border = "2px solid red";
+      }
+      if (!activity) {
+        displayErrorActivity.style.display = "block";
+        inputActivity.style.border = "2px solid red";
+      }
 
-    formActivity.reset();
-    displayNotSetActivity.style.display = "none";
+      if (duration <= 0) {
+        displayErrorDuration.style.display = "block";
+        inputDuration.style.border = "2px solid red";
+      }
+    } else {
+      activities.push({
+        date: date,
+        activity: activity,
+        duration: duration,
+      });
 
-    showActivity(date, activity, duration);
-    separateActivities();
+      formActivity.reset();
+      displayNotSetActivity.style.display = "none";
+
+      showActivity(date, activity, duration);
+      separateActivities();
+    }
   }
 }
 
 function setLimit(event) {
   event.preventDefault();
-  limit = Number(document.getElementById("limit").value);
+  limit = Number(document.getElementById("input-limit").value);
 
-  if (limit !== "" && limit !== null && limit !== undefined && limit > 0) {
+  if (!limit || limit <= 0) {
+    displayErrorLimit.style.display = "block";
+    inputLimit.style.border = "2px solid red";
+  } else {
     showLimitElement.innerHTML = limit;
     formLimit.reset();
 
@@ -253,5 +292,41 @@ function checkLimit(date, total) {
 
     displayOverLimit.style.color = "red";
     displayOverLimit.appendChild(overLimit);
+  }
+}
+
+function limitErrorHandler() {
+  if (Number(inputLimit.value) > 0) {
+    displayErrorLimit.style.display = "none";
+    inputLimit.style.borderColor = "black";
+  } else {
+    displayErrorLimit.style.display = "block";
+    inputLimit.style.borderColor = "red";
+  }
+}
+
+function dateErrorHandler() {
+  displayOverLimitError.style.display = "none";
+
+  displayErrorDate.style.display = "none";
+  inputDate.style.borderColor = "black";
+}
+
+function activityErrorHandler() {
+  displayOverLimitError.style.display = "none";
+
+  displayErrorActivity.style.display = "none";
+  inputActivity.style.borderColor = "black";
+}
+
+function durationErrorHandler() {
+  displayOverLimitError.style.display = "none";
+
+  if (Number(inputDuration.value) <= 0) {
+    displayErrorDuration.style.display = "block";
+    inputDuration.style.borderColor = "red";
+  } else {
+    displayErrorDuration.style.display = "none";
+    inputDuration.style.borderColor = "black";
   }
 }

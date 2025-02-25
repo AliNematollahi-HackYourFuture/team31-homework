@@ -27,7 +27,13 @@ body {
 .inputs {
   width: 250px;
   height: 25px;
+  border: 2px solid black;
   border-radius: 5px;
+}
+
+.inputs:focus{
+  /*border: none;*/
+  outline: none;
 }
 
 .button {
@@ -44,4 +50,7 @@ body {
 .table td {
   border: 1px solid black;
   height: 30px;
+}
+.color-red{
+  color: red;
 }
