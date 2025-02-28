@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework-js1-week3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Homework-js1-week3</h1>
+
+    <div class="container">
+      <h2 class="title">Smart Phone Usage App</h2>
+
+      <div>
+        <form id="form-limit" class="input-form">
+          <div class="input-container">
+            <label class="label-block" for="input-limit">Set Your Limit</label>
+            <input class="inputs" type="number" id="input-limit" required onchange="limitErrorHandler()" />
+          </div>
+          <button class="button" type="submit" onclick="setLimit(event)">
+            Set Limit
+          </button>
+          <p id="display-error-limit" class="color-red"> Invalid Input</p>
+        </form>
+        <hr />
+        <h3>Enter Your Usage Phone Activity</h3>
+        <form id="form-activity" class="input-form">
+          <div class="input-container">
+            <label class="label-block" for="input-date">Date</label>
+            <input class="inputs" type="date" id="input-date" required onfocus="dateErrorHandler()"/>
+            <p id="display-error-date" class="color-red"> Invalid Input</p>
+          </div>
+          <div class="input-container">
+            <label class="label-block" for="input-activity">Activity</label>
+            <input
+              class="inputs"
+              type="text"
+              list="activity-options"
+              id="input-activity"
+              required
+              onfocus="activityErrorHandler()"
+            />
+            <datalist id="activity-options">
+              <option>Youtube</option>
+              <option>Facebook</option>
+              <option>News</option>
+              <option>Instagram</option>
+              <option>Tiktok</option>
+            </datalist>
+          <p id="display-error-activity" class="color-red"> Invalid Input</p>
+          </div>
+          <div class="input-container">
+            <label class="label-block" for="input-duration">Duration</label>
+            <input class="inputs" type="number" id="input-duration" required onchange="durationErrorHandler()"/>
+            <p id="display-error-duration" class="color-red"> Invalid Input</p>
+          </div>
+          <button class="button" type="submit" onclick="activityHandler(event)">
+            Add Activity
+          </button>
+          <p id="display-over-limit-error"></p>
+        </form>
+        <hr />
+        <div>
+          <h2 class="status-title">Status</h2>
+          <p id="display-not-set-activity">
+            You Have Not Enter Eny Activity
+            <br />
+            Add some Activity
+          </p>
+          <p id="display-not-set-limit">You Have Not Set Your Daily Limit</p>
+          <p id="display-limit">
+            <span>Your Daily Limit Was Set To</span>
+            <span id="limit-value"></span>
+            <span>Minutes</span>
+          </p>
+          <div id="display-over-limit"></div>
+          <div id="tables">
+            <div id="activity-table-container"></div>
+            <hr />
+            <h3>Separated Activities By Date</h3>
+            <div id="days"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./item-array-removal.js"></script>
+    <script src="./travel-information .js"></script>
+    <script src="./series-durations.js"></script>
+    <script src="./notes.js"></script>
+    <script src="./phone-usage.js"></script>
+  </body>
+</html>
