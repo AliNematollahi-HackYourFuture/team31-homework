@@ -148,10 +148,10 @@ function calculator(statement) {
 
 function ageCalculator(birthday) {
   // Input validation
-  const birthdayArray = birthday.split("-");
-  const year = Number(birthdayArray[0]);
-  const month = Number(birthdayArray[1]);
-  const day = Number(birthdayArray[2]);
+  const birthdayDate = new Date(birthday);
+  const year = birthdayDate.getFullYear();
+  const month = birthdayDate.getMonth() + 1;
+  const day = birthdayDate.getDate();
 
   if (isNaN(year) || year < 1900 || year > currentYear) {
     return "Invalid date or format. Date format template: yyyy-mm-dd";

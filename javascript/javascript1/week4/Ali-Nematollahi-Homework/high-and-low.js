@@ -1,7 +1,7 @@
 function highAndLow(numbers) {
   const stringArray = numbers.split(" ");
   const numbersArray = [];
-  for (i in stringArray) {
+  for (let i in stringArray) {
     numbersArray.push(parseFloat(stringArray[i]));
   }
   const max = Math.max(...numbersArray);
