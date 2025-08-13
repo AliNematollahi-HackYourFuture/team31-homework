@@ -3,3 +3,5 @@ Broccoli
 Eggplant
 Potato
 Tomato
+Cauliflower
+Bell Pepper
